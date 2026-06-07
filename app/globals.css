@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #c9a227;
+  --gold-light: #e4c76b;
+  --cream: #f6f1e7;
+  --noir: #0b0b0b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-noir text-cream font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Compense le header sticky lors des ancres */
+  section[id] {
+    scroll-margin-top: 88px;
+  }
+
+  ::selection {
+    background: rgba(201, 162, 39, 0.85);
+    color: #0b0b0b;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif;
+    text-wrap: balance;
+  }
+
+  /* Barre de défilement discrète et dorée */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b0b0b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(#c9a227, #a8851a);
+    border-radius: 999px;
+    border: 2px solid #0b0b0b;
+  }
+}
+
+@layer components {
+  .container-luxe {
+    @apply container max-w-[1200px];
+  }
+
+  /* Texte doré dégradé */
+  .text-gold-gradient {
+    @apply bg-gold-gradient bg-clip-text text-transparent;
+  }
+
+  /* Filet doré horizontal fin */
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(201, 162, 39, 0.65) 25%,
+      rgba(228, 199, 107, 1) 50%,
+      rgba(201, 162, 39, 0.65) 75%,
+      transparent
+    );
+  }
+
+  /* Sur-titre (eyebrow) chic */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[0.72rem] font-medium uppercase tracking-luxe text-gold;
+  }
+  .eyebrow::before,
+  .eyebrow::after {
+    content: "";
+    @apply h-px w-8 bg-gold/50;
+  }
+
+  /* Bouton CTA principal doré */
+  .btn-gold {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gold-gradient px-8 py-4
+      text-sm font-semibold uppercase tracking-wider2 text-noir shadow-gold
+      transition-all duration-300 ease-luxe hover:shadow-gold-lg hover:brightness-110 active:scale-[0.98]
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-light focus-visible:ring-offset-2 focus-visible:ring-offset-noir;
+  }
+  /* Reflet lumineux qui balaie le bouton */
+  .btn-gold::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 70%
+    );
+    transform: translateX(-120%);
+    transition: transform 0.8s var(--ease-luxe, cubic-bezier(0.22, 1, 0.36, 1));
+  }
+  .btn-gold:hover::after {
+    transform: translateX(120%);
+  }
+
+  /* Bouton secondaire contour doré */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-gold/60 px-7 py-3.5
+      text-sm font-medium uppercase tracking-wider2 text-cream transition-all duration-300 ease-luxe
+      hover:border-gold hover:bg-gold/10 hover:text-gold-light;
+  }
+
+  /* Carte sombre premium */
+  .card-luxe {
+    @apply rounded-2xl border border-gold/15 bg-gradient-to-b from-noir-50/80 to-noir-200/90 p-6
+      shadow-card backdrop-blur-sm transition-all duration-500 ease-luxe;
+  }
+
+  /* Pastille badge réassurance */
+  .badge-trust {
+    @apply inline-flex items-center gap-2 rounded-full border border-gold/25 bg-noir-50/60 px-4 py-2
+      text-xs font-medium text-cream/90;
+  }
+
+  /* Champ de formulaire */
+  .field-input {
+    @apply w-full rounded-xl border border-gold/20 bg-noir/60 px-4 py-3.5 text-base text-cream
+      placeholder:text-cream/35 transition-all duration-300
+      focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30;
+  }
+  .field-input-error {
+    @apply border-red-500/70 focus:border-red-500 focus:ring-red-500/30;
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-cream/85;
+  }
+}
+
+@layer utilities {
+  /* Bordure dégradée dorée via masque */
+  .ring-gold-gradient {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(#0b0b0b, #0b0b0b) padding-box,
+      linear-gradient(135deg, rgba(228, 199, 107, 0.9), rgba(168, 133, 26, 0.4))
+        border-box;
+  }
+
+  .bg-grain {
+    background-image: radial-gradient(
+      rgba(201, 162, 39, 0.05) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Respecte les préférences de mouvement réduit */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
