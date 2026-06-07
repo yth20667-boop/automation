@@ -23,7 +23,7 @@ const pad = (n: number) => n.toString().padStart(2, "0");
 function CountBox({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
-      <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-gold/25 bg-noir/70 font-serif text-3xl font-semibold text-gold tabular-nums shadow-inner-gold sm:h-20 sm:w-20 sm:text-4xl">
+      <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-gold/25 bg-noir/70 font-serif text-2xl font-semibold text-gold tabular-nums shadow-inner-gold sm:h-20 sm:w-20 sm:text-4xl">
         {pad(value)}
       </div>
       <span className="mt-2 text-[0.65rem] uppercase tracking-wider2 text-cream/55">
@@ -79,11 +79,11 @@ export function Urgency() {
             </p>
 
             {/* Compte à rebours */}
-            <div className="mt-8 flex items-center justify-center gap-3 sm:gap-5">
+            <div className="mt-8 flex items-center justify-center gap-2 sm:gap-5">
               <CountBox value={mounted ? t.h : 0} label="Heures" />
-              <span className="font-serif text-3xl text-gold/50">:</span>
+              <span className="font-serif text-2xl text-gold/50 sm:text-3xl">:</span>
               <CountBox value={mounted ? t.m : 0} label="Minutes" />
-              <span className="font-serif text-3xl text-gold/50">:</span>
+              <span className="font-serif text-2xl text-gold/50 sm:text-3xl">:</span>
               <CountBox value={mounted ? t.s : 0} label="Secondes" />
             </div>
 

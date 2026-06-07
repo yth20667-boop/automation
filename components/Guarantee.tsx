@@ -78,6 +78,27 @@ export function Guarantee() {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-7 grid grid-cols-3 gap-3 border-t border-gold/10 pt-6">
+                {[
+                  { icon: "cash", label: "Paiement à la réception" },
+                  { icon: "truck", label: "Livraison 24–72h" },
+                  { icon: "phone", label: "Service client à l'écoute" },
+                ].map((r) => (
+                  <div
+                    key={r.label}
+                    className="flex flex-col items-center gap-2 text-center"
+                  >
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/30 text-gold">
+                      <Icon name={r.icon} width={18} height={18} />
+                    </span>
+                    <span className="text-[0.72rem] leading-tight text-cream/65">
+                      {r.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
               <div className="mt-8 flex justify-center md:justify-start">
                 <CtaButton>Commander sans risque</CtaButton>
               </div>

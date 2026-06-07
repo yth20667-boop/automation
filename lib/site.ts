@@ -366,6 +366,14 @@ export const faqs: Faq[] = [
     q: "Puis-je commander plusieurs coffrets ?",
     a: "Bien sûr ! Profitez de nos packs 2 et 3 coffrets pour économiser jusqu'à 448 DH — idéal pour faire une cure complète ou offrir à vos proches.",
   },
+  {
+    q: "Combien de temps dure un coffret ?",
+    a: "Avec une utilisation 2 à 3 fois par semaine, le shampooing (250 ml) et le sérum (75 ml) durent en moyenne 6 à 8 semaines. Les packs 2 et 3 coffrets permettent une cure complète sans interruption.",
+  },
+  {
+    q: "Et si je change d'avis après la commande ?",
+    a: "Aucun souci : tant que le colis n'est pas expédié, vous pouvez modifier ou annuler lors de notre appel de confirmation. Et grâce à la garantie satisfait ou remboursé de 14 jours, vous commandez sans aucun risque.",
+  },
 ];
 
 export const footer = {

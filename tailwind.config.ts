@@ -84,12 +84,17 @@ const config: Config = {
         "spin-slow": {
           to: { transform: "rotate(360deg)" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         float: "float 6s ease-in-out infinite",
         shimmer: "shimmer 6s linear infinite",
         "pulse-soft": "pulse-soft 2.2s ease-in-out infinite",
         "spin-slow": "spin-slow 22s linear infinite",
+        marquee: "marquee 26s linear infinite",
       },
       transitionTimingFunction: {
         luxe: "cubic-bezier(0.22, 1, 0.36, 1)",

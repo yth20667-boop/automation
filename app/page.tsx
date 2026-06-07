@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { MobileCtaBar } from "@/components/MobileCtaBar";
 import { Hero } from "@/components/Hero";
+import { Stats } from "@/components/Stats";
 import { Problem } from "@/components/Problem";
 import { Solution } from "@/components/Solution";
 import { Benefits } from "@/components/Benefits";
@@ -71,6 +72,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Stats />
         <Problem />
         <Solution />
         <Benefits />
