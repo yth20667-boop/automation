@@ -11,7 +11,10 @@ declare global {
   }
 }
 
-export const PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
+// L'ID du Pixel est une valeur publique : on fournit une valeur par défaut
+// pour que le tracking client fonctionne même sans variable d'env configurée.
+export const PIXEL_ID =
+  process.env.NEXT_PUBLIC_FB_PIXEL_ID || "1275266954687591";
 
 /** Génère un identifiant d'événement unique (partagé Pixel + CAPI). */
 export function generateEventId(): string {

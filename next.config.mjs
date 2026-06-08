@@ -3,13 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
-    // Nos visuels produit livrés par défaut sont des SVG vectoriels premium.
-    // Pour utiliser vos photos réelles (JPG/PNG/WebP), déposez-les dans /public/images
-    // et mettez à jour les chemins dans lib/site.ts.
+    // Images servies en statique (sans passer par l'optimiseur /_next/image).
+    // → Fiabilité maximale pour les SVG ET les photos JPG, comportement
+    //   identique en local et sur Vercel (évite les erreurs 400 sur les SVG).
+    unoptimized: true,
     dangerouslyAllowSVG: true,
-    contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    formats: ["image/avif", "image/webp"],
   },
   // Le lint est exécuté séparément via `npm run lint` afin de ne jamais bloquer le build de prod.
   eslint: {

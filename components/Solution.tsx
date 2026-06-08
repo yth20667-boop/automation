@@ -74,6 +74,34 @@ export function Solution() {
           </Stagger>
         </div>
 
+        {/* Texture du sérum */}
+        <Reveal className="mt-12">
+          <div className="relative overflow-hidden rounded-3xl border border-gold/15 shadow-card">
+            <div className="relative aspect-[16/10] w-full sm:aspect-[21/9]">
+              <Image
+                src={images.serumTexture}
+                alt="Texture du Sérum Fortifiant VALON — concentré de kératine et d'huile d'argan"
+                fill
+                sizes="(max-width: 1200px) 92vw, 1100px"
+                className="object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-noir via-noir/55 to-transparent" />
+            </div>
+            <div className="absolute inset-0 flex flex-col justify-center p-6 sm:p-10">
+              <span className="text-xs uppercase tracking-luxe text-gold">
+                La texture
+              </span>
+              <h3 className="mt-2 max-w-xs font-serif text-2xl font-semibold text-cream sm:max-w-sm sm:text-3xl">
+                Un sérum riche, jamais gras
+              </h3>
+              <p className="mt-2 max-w-[15rem] text-sm leading-relaxed text-cream/75 sm:max-w-xs">
+                Concentré de kératine et d'huile d'argan qui pénètre
+                instantanément pour gainer la fibre et révéler la brillance.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
         {/* Les deux gestes du rituel */}
         <Stagger className="mt-12 grid gap-5 sm:grid-cols-2">
           {solution.steps.map((s) => (

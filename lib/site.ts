@@ -47,9 +47,14 @@ export const images = {
   box: "/images/box.svg", // Boîte fermée
   shampoo: "/images/shampoo.svg", // Flacon shampooing seul
   serum: "/images/serum.svg", // Flacon sérum seul
-  before: "/images/before.svg", // Avant
-  after: "/images/after.svg", // Après
+  before: "/images/before.svg", // Avant (ancien slider, conservé)
+  after: "/images/after.svg", // Après (ancien slider, conservé)
   og: "/opengraph-image", // Aperçu réseaux sociaux (généré dynamiquement par next/og)
+  // Photos réelles (premium)
+  arganOil: "/images/argan-oil.jpg", // Section Huile d'argan
+  keratin: "/images/keratin.jpg", // Section Kératine
+  hairResult: "/images/hair-result.jpg", // Section Avant / Après
+  serumTexture: "/images/serum-texture.jpg", // Section Texture du sérum
 };
 
 export const trustBadges = [
@@ -165,18 +170,21 @@ export const ingredients = {
       role: "Reconstruit la fibre",
       text: "Protéine naturelle dont vos cheveux sont composés. Elle comble les zones abîmées, renforce la structure et redonne résistance et élasticité.",
       icon: "molecule",
+      image: images.keratin,
     },
     {
       name: "Huile d'argan",
       role: "Nourrit & protège",
       text: "L'or liquide du Maroc, riche en vitamine E et acides gras essentiels. Elle hydrate intensément, assouplit et fait briller sans alourdir.",
       icon: "argan",
+      image: images.arganOil,
     },
     {
       name: "Actifs végétaux",
       role: "Fortifient & apaisent",
       text: "Un complexe de plantes et de vitamines qui apaise le cuir chevelu, stimule la racine et fortifie le cheveu jour après jour.",
       icon: "plant",
+      image: "",
     },
   ],
   note: "Formulé sans cruauté envers les animaux. Convient aux cheveux colorés.",
@@ -186,7 +194,7 @@ export const beforeAfter = {
   eyebrow: "Avant / Après",
   title: "Le résultat parle de lui-même",
   intro:
-    "Glissez le curseur pour découvrir la transformation après 14 jours de rituel VALON.",
+    "Découvrez la transformation visible après 14 jours de rituel VALON.",
   beforeLabel: "Avant",
   afterLabel: "Après 14 jours",
   disclaimer:

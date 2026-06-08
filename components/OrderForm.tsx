@@ -15,7 +15,7 @@ import {
 import { Icon } from "./icons";
 import { Reveal } from "./motion";
 
-type Fields = { name: string; phone: string; city: string; address: string };
+type Fields = { name: string; phone: string; city: string };
 type Errors = Partial<Record<keyof Fields, string>>;
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -26,7 +26,6 @@ export function OrderForm() {
     name: "",
     phone: "",
     city: "",
-    address: "",
   });
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
@@ -66,8 +65,6 @@ export function OrderForm() {
       e.phone = "Numéro invalide. Format : 06 ou 07 suivi de 8 chiffres.";
     if (fields.city.trim().length < 2)
       e.city = "Veuillez indiquer votre ville.";
-    if (fields.address.trim().length < 5)
-      e.address = "Veuillez saisir votre adresse complète.";
     setErrors(e);
     if (Object.keys(e).length > 0) {
       const first = document.getElementById(Object.keys(e)[0]);
@@ -215,17 +212,6 @@ export function OrderForm() {
                       placeholder="Ex : Casablanca"
                       onFocus={onFirstFocus}
                       onChange={(v) => update("city", v)}
-                    />
-                    <Field
-                      id="address"
-                      label="Adresse complète"
-                      value={fields.address}
-                      error={errors.address}
-                      autoComplete="street-address"
-                      placeholder="N°, rue, quartier, point de repère…"
-                      textarea
-                      onFocus={onFirstFocus}
-                      onChange={(v) => update("address", v)}
                     />
                   </div>
                 </div>

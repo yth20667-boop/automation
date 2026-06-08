@@ -40,10 +40,10 @@ export async function POST(req: Request) {
     );
   }
 
-  const { name, phone, city, address } = body;
+  const { name, phone, city } = body;
 
-  // --- Validation côté serveur ---
-  if (!name || !phone || !city || !address) {
+  // --- Validation côté serveur (adresse non requise : checkout rapide) ---
+  if (!name || !phone || !city) {
     return NextResponse.json(
       { ok: false, error: "Champs obligatoires manquants." },
       { status: 400 }
@@ -66,7 +66,6 @@ export async function POST(req: Request) {
     name: String(name).trim(),
     phone: normPhone,
     city: String(city).trim(),
-    address: String(address).trim(),
     offerId: body.offerId ?? null,
     offerLabel: body.offerLabel ?? null,
     quantity,
@@ -129,7 +128,8 @@ async function sendCapiPurchase(p: {
   clientIp?: string;
   userAgent?: string;
 }) {
-  const PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
+  const PIXEL_ID =
+    process.env.NEXT_PUBLIC_FB_PIXEL_ID || "1275266954687591";
   const TOKEN = process.env.FB_CAPI_TOKEN;
   if (!PIXEL_ID || !TOKEN) {
     return {

@@ -15,6 +15,13 @@
     -webkit-text-size-adjust: 100%;
   }
 
+  /* Garde anti-débordement horizontal (évite tout scroll/zoom latéral sur mobile) */
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-noir text-cream font-sans antialiased;
     text-rendering: optimizeLegibility;
