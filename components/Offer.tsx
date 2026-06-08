@@ -18,12 +18,12 @@ export function Offer() {
             <div className="relative flex items-center justify-center bg-gradient-to-b from-noir-50/70 to-noir-200/90 p-8">
               <div className="pointer-events-none absolute left-1/2 top-1/2 h-3/5 w-3/5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/15 blur-[80px]" />
               <Image
-                src={images.coffret}
+                src={images.mainProduct}
                 alt="Coffret VALON : shampooing nourrissant 250 ml et sérum fortifiant 75 ml"
                 width={760}
-                height={580}
+                height={760}
                 sizes="(max-width: 768px) 80vw, 380px"
-                className="relative h-auto w-full max-w-[380px]"
+                className="relative h-auto w-full max-w-[380px] rounded-2xl"
               />
               <span className="absolute left-5 top-5 rounded-full bg-gold-gradient px-3 py-1 text-xs font-bold uppercase tracking-wider text-noir shadow-gold">
                 Édition luxe

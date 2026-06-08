@@ -143,13 +143,13 @@ export function Hero() {
               className="relative"
             >
               <Image
-                src={images.coffret}
-                alt="Coffret VALON ouvert : shampooing nourrissant 250 ml et sérum fortifiant 75 ml"
+                src={images.mainProduct}
+                alt="Coffret de soin capillaire VALON — shampooing nourrissant 250 ml et sérum fortifiant 75 ml à la kératine et huile d'argan"
                 width={760}
-                height={580}
+                height={760}
                 priority
                 sizes="(max-width: 1024px) 90vw, 520px"
-                className="h-auto w-full drop-shadow-[0_40px_60px_rgba(0,0,0,0.6)]"
+                className="h-auto w-full rounded-3xl drop-shadow-[0_40px_60px_rgba(0,0,0,0.6)]"
               />
             </motion.div>
 

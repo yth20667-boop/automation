@@ -19,29 +19,19 @@ export function Solution() {
         />
 
         <div className="mt-14 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          {/* Visuel : les deux flacons */}
+          {/* Visuel : le coffret */}
           <Reveal>
-            <div className="relative rounded-3xl border border-gold/15 bg-gradient-to-b from-noir-50/60 to-noir-200/80 p-8 shadow-card">
-              <div className="pointer-events-none absolute left-1/2 top-1/2 h-2/3 w-2/3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/10 blur-[80px]" />
-              <div className="relative flex items-end justify-center gap-2 sm:gap-6">
+            <div className="relative overflow-hidden rounded-3xl border border-gold/15 bg-gradient-to-b from-noir-50/60 to-noir-200/80 shadow-card">
+              <div className="relative aspect-[4/3] w-full">
                 <Image
-                  src={images.shampoo}
-                  alt="Shampooing Nourrissant & Fortifiant VALON 250 ml"
-                  width={360}
-                  height={560}
-                  sizes="(max-width: 768px) 45vw, 240px"
-                  className="h-auto w-[46%] max-w-[240px] drop-shadow-[0_30px_40px_rgba(0,0,0,0.55)]"
-                />
-                <Image
-                  src={images.serum}
-                  alt="Sérum Fortifiant Cheveux VALON 75 ml"
-                  width={300}
-                  height={560}
-                  sizes="(max-width: 768px) 38vw, 200px"
-                  className="h-auto w-[38%] max-w-[200px] drop-shadow-[0_30px_40px_rgba(0,0,0,0.55)]"
+                  src={images.productBox}
+                  alt="Coffret VALON — Shampooing Nourrissant 250 ml & Sérum Fortifiant 75 ml"
+                  fill
+                  sizes="(max-width: 1024px) 90vw, 520px"
+                  className="object-cover"
                 />
               </div>
-              <p className="relative mt-6 text-center text-xs uppercase tracking-luxe text-gold/80">
+              <p className="py-5 text-center text-xs uppercase tracking-luxe text-gold/80">
                 Le coffret complet
               </p>
             </div>

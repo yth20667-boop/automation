@@ -24,7 +24,7 @@ function ProductJsonLd() {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
-    image: [`${SITE_URL}/opengraph-image`, `${SITE_URL}${images.coffret}`],
+    image: [`${SITE_URL}/opengraph-image`, `${SITE_URL}${images.mainProduct}`],
     description: product.description,
     brand: { "@type": "Brand", name: "VALON" },
     category: "Hair Care",

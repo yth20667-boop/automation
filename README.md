@@ -133,27 +133,28 @@ Pour vérifier : renseignez `FB_TEST_EVENT_CODE` et regardez Events Manager →
 
 ---
 
-## 🖼️ Remplacer les visuels par vos vraies photos
+## 🖼️ Photos produit
 
-Les visuels livrés par défaut sont des **SVG vectoriels premium** (flacons noir & or,
-coffret, avant/après) dans `public/images/`. Pour utiliser vos **photos réelles** :
+Le code lit **exactement** ces 7 fichiers depuis `public/images/` (chemins définis
+dans `lib/site.ts` → objet `images`). Déposez vos photos avec ces noms précis :
 
-1. Déposez vos fichiers (JPG/PNG/WebP) dans `public/images/`.
-2. Mettez à jour les chemins dans **`lib/site.ts`** (objet `images`) :
+| Fichier | Section |
+| --- | --- |
+| `main-product.jpg` | Héro + récapitulatif de l'offre |
+| `product-box.jpg` | Section « La solution » (le coffret) |
+| `serum-texture.jpg` | Section « La solution » (bandeau texture) |
+| `keratin.jpg` | Section Ingrédients (kératine) |
+| `argan-oil.jpg` | Section Ingrédients (huile d'argan) |
+| `before.jpg` | Section Résultats (avant) |
+| `after.jpg` | Section Résultats (après) |
 
-   ```ts
-   export const images = {
-     coffret: "/images/mon-coffret.jpg",
-     shampoo: "/images/mon-shampoing.jpg",
-     serum:   "/images/mon-serum.jpg",
-     before:  "/images/avant.jpg",
-     after:   "/images/apres.jpg",
-     og:      "/opengraph-image",
-   };
-   ```
+> ⚠️ **Important — déploiement** : ces images doivent être **commitées sur la branche
+> GitHub** pour apparaître sur Vercel. Un fichier seulement présent en local (ou
+> joint dans un chat) n'arrive PAS dans le build. Pour les ajouter :
+> **GitHub → dossier `public/images/` → Add file → Upload files → glisser les 7 JPG →
+> Commit** sur la branche déployée.
 
-C'est tout — `next/image` s'occupe de l'optimisation. (Les photos `.jpg/.png` n'ont
-pas besoin de l'option `dangerouslyAllowSVG`, qui ne sert qu'à nos SVG par défaut.)
+Pour changer un nom de fichier, modifiez simplement l'objet `images` dans `lib/site.ts`.
 
 ---
 

@@ -43,18 +43,15 @@ export const product = {
 
 /** Chemins des visuels. Remplacez par vos vraies photos (mêmes clés). */
 export const images = {
-  coffret: "/images/coffret.svg", // Visuel héro : le coffret ouvert
-  box: "/images/box.svg", // Boîte fermée
-  shampoo: "/images/shampoo.svg", // Flacon shampooing seul
-  serum: "/images/serum.svg", // Flacon sérum seul
-  before: "/images/before.svg", // Avant (ancien slider, conservé)
-  after: "/images/after.svg", // Après (ancien slider, conservé)
-  og: "/opengraph-image", // Aperçu réseaux sociaux (généré dynamiquement par next/og)
-  // Photos réelles (premium)
-  arganOil: "/images/argan-oil.jpg", // Section Huile d'argan
-  keratin: "/images/keratin.jpg", // Section Kératine
-  hairResult: "/images/hair-result.jpg", // Section Avant / Après
-  serumTexture: "/images/serum-texture.jpg", // Section Texture du sérum
+  // Photos produit réelles (à déposer dans /public/images)
+  mainProduct: "/images/main-product.jpg", // Héro + récap offre : visuel produit principal
+  productBox: "/images/product-box.jpg", // Section solution : le coffret
+  serumTexture: "/images/serum-texture.jpg", // Section solution : texture du sérum
+  keratin: "/images/keratin.jpg", // Section ingrédients : kératine
+  arganOil: "/images/argan-oil.jpg", // Section ingrédients : huile d'argan
+  before: "/images/before.jpg", // Section résultats : avant
+  after: "/images/after.jpg", // Section résultats : après
+  og: "/opengraph-image", // Aperçu réseaux sociaux (généré par next/og)
 };
 
 export const trustBadges = [
