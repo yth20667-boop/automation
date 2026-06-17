@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  waha:
+    image: devlikeapro/waha:latest
+    container_name: waha
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # API key — change this to a strong secret before deploying
+      WHATSAPP_API_KEY: "your-secret-api-key-here"
+      # Keep sessions alive across restarts
+      WHATSAPP_RESTART_ALL_SESSIONS: "true"
+      # Store session data so QR scan persists after container restart
+      WHATSAPP_FILES_FOLDER: /app/.sessions
+    volumes:
+      - waha_sessions:/app/.sessions
+
+volumes:
+  waha_sessions:
+    driver: local
